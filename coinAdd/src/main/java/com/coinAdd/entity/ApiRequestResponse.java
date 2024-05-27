@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,9 @@ public class ApiRequestResponse {
 
     private Long userId;
     private String requestUrl;
+    
+    @Lob
+    @Column(length = 65555)
     private String response;
 
     @Column(nullable = false)
